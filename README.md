@@ -1,4 +1,6 @@
 # Swarm
+
+```
 swarm/
 ├── .github/
 │   ├── workflows/
@@ -93,8 +95,7 @@ swarm/
 ├── README.md
 ├── go.mod
 └── go.sum
-Here's a detailed explanation of each directory and its purpose:
-markdownCopy# Directory Structure Explanation
+```
 
 ## Root Level Directories
 
