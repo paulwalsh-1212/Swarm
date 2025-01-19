@@ -1,4 +1,217 @@
 # Swarm
+swarm/
+├── .github/
+│   ├── workflows/
+│   │   ├── build.yml
+│   │   ├── test.yml
+│   │   └── release.yml
+│   └── ISSUE_TEMPLATE/
+├── api/
+│   ├── v1/
+│   │   ├── agent/
+│   │   ├── cluster/
+│   │   ├── task/
+│   │   └── types.go
+│   └── openapi/
+│       └── swagger.yaml
+├── cmd/
+│   ├── swarm/
+│   │   └── main.go
+│   ├── swarmd/
+│   │   └── main.go
+│   └── swarmctl/
+│       └── main.go
+├── pkg/
+│   ├── agent/
+│   │   ├── controller/
+│   │   ├── runtime/
+│   │   ├── store/
+│   │   └── types.go
+│   ├── apis/
+│   │   └── swarm/
+│   │       └── v1/
+│   ├── auth/
+│   │   ├── authenticator/
+│   │   ├── authorizer/
+│   │   └── rbac/
+│   ├── client/
+│   │   ├── clientset/
+│   │   ├── informers/
+│   │   └── listers/
+│   ├── cluster/
+│   │   ├── controller/
+│   │   ├── node/
+│   │   └── service/
+│   ├── communication/
+│   │   ├── mesh/
+│   │   ├── protocol/
+│   │   └── pubsub/
+│   ├── config/
+│   │   ├── loader/
+│   │   └── validator/
+│   ├── controller/
+│   │   ├── agent/
+│   │   ├── cluster/
+│   │   ├── node/
+│   │   └── task/
+│   ├── metrics/
+│   │   ├── collector/
+│   │   └── prometheus/
+│   ├── resource/
+│   │   ├── allocator/
+│   │   ├── manager/
+│   │   └── scheduler/
+│   ├── security/
+│   │   ├── certs/
+│   │   ├── crypto/
+│   │   └── tls/
+│   ├── store/
+│   │   ├── etcd/
+│   │   └── interface.go
+│   └── utils/
+│       ├── errors/
+│       ├── logger/
+│       └── version/
+├── internal/
+│   ├── cache/
+│   ├── queue/
+│   └── webhook/
+├── test/
+│   ├── e2e/
+│   ├── integration/
+│   └── unit/
+├── tools/
+│   ├── cli/
+│   └── codegen/
+├── vendor/
+├── web/
+│   ├── api/
+│   └── ui/
+├── .gitignore
+├── Dockerfile
+├── Makefile
+├── README.md
+├── go.mod
+└── go.sum
+Here's a detailed explanation of each directory and its purpose:
+markdownCopy# Directory Structure Explanation
+
+## Root Level Directories
+
+### /api
+- Contains API definitions and OpenAPI/Swagger specifications
+- Version-controlled API packages
+- Type definitions shared across the project
+
+### /cmd
+- Main applications for the project
+- `swarm`: CLI tool
+- `swarmd`: Main daemon
+- `swarmctl`: Control utility
+
+### /pkg
+Main project packages:
+
+#### /pkg/agent
+- Agent-related implementations
+- Runtime management
+- State storage
+- Type definitions
+
+#### /pkg/apis
+- API type definitions
+- Custom resource definitions
+- API group implementations
+
+#### /pkg/auth
+- Authentication mechanisms
+- Authorization logic
+- RBAC implementations
+
+#### /pkg/client
+- Generated client code
+- Informers and listers
+- Client interfaces
+
+#### /pkg/cluster
+- Cluster management
+- Node operations
+- Service discovery
+
+#### /pkg/communication
+- Communication mesh implementation
+- Protocol handlers
+- Pub/sub system
+
+#### /pkg/config
+- Configuration management
+- Validation logic
+- Loading mechanisms
+
+#### /pkg/controller
+- Core controllers
+- Reconciliation loops
+- State management
+
+#### /pkg/metrics
+- Metrics collection
+- Prometheus integration
+- Custom metrics
+
+#### /pkg/resource
+- Resource allocation
+- Scheduling logic
+- Resource management
+
+#### /pkg/security
+- Security implementations
+- Certificate management
+- TLS configurations
+
+#### /pkg/store
+- Storage interfaces
+- ETCD implementation
+- Data persistence
+
+#### /pkg/utils
+- Shared utilities
+- Error handling
+- Logging
+
+### /internal
+- Private application code
+- Not importable by other projects
+- Internal utilities
+
+### /test
+- Test suites
+- E2E tests
+- Integration tests
+- Unit tests
+
+### /tools
+- Build tools
+- Code generation
+- Development utilities
+
+### /web
+- API handlers
+- Web UI components
+- Frontend assets
+
+## Key Files
+
+### Root Level
+- `Dockerfile`: Container build instructions
+- `Makefile`: Build and development commands
+- `go.mod`: Go module definition
+- `go.sum`: Dependencies checksum
+
+### Configuration
+- `.github/workflows/`: CI/CD pipelines
+- `.gitignore`: Git ignore patterns
+
+  
 # Table of Contents
 
 ## 1. System Overview
